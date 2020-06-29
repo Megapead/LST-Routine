@@ -4,37 +4,27 @@ import java.util.Date;
 
 public class Task {
     private String title, description;
-    private Time deadline, startTime,arrivalTime;
+    private Time deadline,arrivalTime;
     private Priority priority;
     private long manMinutes;
 
-    public Task(String title){
+    public Task(String title,Time deadline){
         this.arrivalTime = Time.now();
+        this.deadline = deadline;
         this.title = title;
         this.manMinutes = 0;
     }
 
-    public Task(String title, Time startTime){
-        this(title);
-        this.startTime = startTime;
-    }
     public Task(String title, Time startTime, Time deadline){
-        this(title,startTime);
-        this.deadline = deadline;
+        this(title,deadline);
+        this.arrivalTime = startTime;
     }
 
-    public void setStartTime(Time startTime){
-        this.startTime = startTime;
-    }
-    public void setDeadline(Time deadline) {
-        this.deadline = deadline;
-    }
-
-    public void setManMinutes(long minutes){
+    private void setManMinutes(long minutes){
         this.manMinutes = minutes;
     }
 
-    public void setManHours(long hours){
+    private void setManHours(long hours){
         this.setManMinutes(hours*60);
     }
 
@@ -53,15 +43,25 @@ public class Task {
         return this.deadline.get() - (Time.now().get() + this.getManMinutes());
     }
 
+    public boolean hasArrived(){
+        if(Time.now().get() - this.arrivalTime.get() < 0)
+            return false;
+        return true;
+    }
+
     /**
      *
      * @return time from startTime to deadline
      */
     public long getTimeline(){
-        if(deadline == null || startTime == null)
+        if(deadline == null || arrivalTime == null)
             return 0;
-        return Math.abs(deadline.get() - startTime.get());
+        return Math.abs(deadline.get() - arrivalTime.get());
     }
 
+    @Override
+    public String toString(){
+        if
+    }
 
 }
