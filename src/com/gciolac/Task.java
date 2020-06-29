@@ -15,12 +15,15 @@ import java.util.Date;
  *  =======================================================
  *  + Task(title:String, deadline:Time)
  *  + Task(title:String, startTime: Time, deadline:Time)
+ *  + Task(t:Task)
  *  - setManMinutes(minutes: long)
  *  - setManHours(hours: long)
  *  + setTaskLength(hours: long, minutes: long)
  *  - getLength():long
  *  + getSlack():long
  *  + hasArrive():boolean
+ *  + getTimeline(): long
+ *  + toString():String
  */
 public class Task {
     private String title, description;
@@ -51,6 +54,19 @@ public class Task {
     public Task(String title, Time startTime, Time deadline){
         this(title,deadline);
         this.arrivalTime = startTime;
+    }
+
+    /**
+     * Copy constructor
+     * @param t
+     */
+    public Task(Task t){
+        this.title  = t.title;
+        this.description = t.description;
+        this.arrivalTime = t.arrivalTime;
+        this.deadline = t.deadline;
+        this.priority = t.priority;
+        this.manMinutes = t.manMinutes;
     }
 
     /**

@@ -5,12 +5,39 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * @Author Gabriel Ciolac
+ *  Basic Time object, created to avoid usage of deprecated Date constructor
+ *  and also to shift epoch time from ms to min
+ *
+ *  Time:
+ *
+ *  - current:Date
+ *  ================================================================
+ *  - Time()
+ *  + Time(year: int, month: int, day: int, hour: int, minute: int)
+ *  + now():Time
+ *  + get():long
+ *  + toString():String
+ */
 public class Time {
     private Date current;
 
+    /**
+     * Creates an object at the current time
+     */
     private Time(){
         this.current = new Date();
     }
+
+    /**
+     * creates an object at specific time
+     * @param year
+     * @param month
+     * @param day
+     * @param hour
+     * @param minute
+     */
     public Time(int year, int month, int day,int hour,int minute){
         Calendar tmp = Calendar.getInstance();
         tmp.set(Calendar.YEAR,year);
@@ -21,6 +48,9 @@ public class Time {
         this.current = tmp.getTime();
     }
 
+    /**
+     * @return current time
+     */
     public static Time now(){
         return new Time();
     }
