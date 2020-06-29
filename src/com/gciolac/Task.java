@@ -4,77 +4,64 @@ import java.util.Date;
 
 public class Task {
     private String title, description;
-    private Date deadline, startTime;
-    private byte priority;
-    private int averageTime;
+    private Time deadline, startTime,arrivalTime;
+    private Priority priority;
+    private long manMinutes;
 
     public Task(String title){
+        this.arrivalTime = Time.now();
         this.title = title;
+        this.manMinutes = 0;
     }
 
-    public Task(String title, Date startTime){
+    public Task(String title, Time startTime){
         this(title);
         this.startTime = startTime;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title){
-        this.title = title;
-    }
-
-    public Date getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(Date deadline) {
+    public Task(String title, Time startTime, Time deadline){
+        this(title,startTime);
         this.deadline = deadline;
     }
 
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
+    public void setStartTime(Time startTime){
         this.startTime = startTime;
     }
-
-    public byte getPriority() {
-        return priority;
+    public void setDeadline(Time deadline) {
+        this.deadline = deadline;
     }
 
-    public void setPriority(byte priority) {
-        this.priority = priority;
+    public void setManMinutes(long minutes){
+        this.manMinutes = minutes;
     }
 
-
-    public int getAverageTime() {
-        return averageTime;
+    public void setManHours(long hours){
+        this.setManMinutes(hours*60);
     }
 
-    public void setAverageTime(int averageTime) {
-        this.averageTime = averageTime;
+    public void setTaskLength(long hours, long minutes){
+        this.setManHours(hours);
+        this.manMinutes += minutes;
+    }
+
+    private long getManMinutes(){
+        return this.manMinutes;
+    }
+
+    public long getSlack(){
+        if(manMinutes == 0 || getTimeline() == 0)
+            return 0;
+        return this.deadline.get() - (Time.now().get() + this.getManMinutes());
     }
 
     /**
-     * Converts time into minutes
-     * Date.getTime() returns milliseconds since epoch as a long
-     * milliseconds / 60000 is time in minutes.
-     * Getting the delta between the deadline and the startTime should give you the task length
-     * @return int
+     *
+     * @return time from startTime to deadline
      */
-    public int lengthMinutes(){
-        return (int) (Math.abs(this.deadline.getTime() - this.startTime.getTime())/60000);
+    public long getTimeline(){
+        if(deadline == null || startTime == null)
+            return 0;
+        return Math.abs(deadline.get() - startTime.get());
     }
+
 
 }
