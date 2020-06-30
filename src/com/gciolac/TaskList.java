@@ -1,5 +1,7 @@
 package com.gciolac;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
@@ -64,12 +66,29 @@ public class TaskList {
         return  tasks.remove(index);
     }
 
+    public void sort(){
+        this.getList().sort(Task::compareTo);
+    }
+    private LinkedList<Task> getList(){
+        return this.tasks;
+    }
     public String toString(){
         StringBuilder s = new StringBuilder("");
         for(Task t: tasks){
             s.append(t.toString());
         }
         return s.toString();
+    }
+
+    public static TaskList copy(TaskList list){
+        if(list == null)
+            throw new NullPointerException("List is Null");
+        TaskList tmp = new TaskList();
+
+        for(Task t: list.getList())
+            tmp.add(t);
+
+        return tmp;
     }
 
 }

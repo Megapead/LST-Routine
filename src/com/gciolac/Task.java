@@ -1,6 +1,8 @@
 package com.gciolac;
 
 
+import java.util.Comparator;
+
 /**
  * @Author Gabriel Ciolac
  * Task object is a schedulable moment in time
@@ -24,7 +26,7 @@ package com.gciolac;
  *  + getTimeline(): long
  *  + toString():String
  */
-public class Task {
+public class Task{
     private String title, description;
     private Time deadline,arrivalTime;
     private Priority priority;
@@ -41,6 +43,7 @@ public class Task {
         this.deadline = deadline;
         this.title = title;
         this.manMinutes = 0;
+        this.priority = Priority.UNDEFINED;
     }
 
     /**
@@ -148,6 +151,12 @@ public class Task {
     }
 
     public int compareTo(Task t){
+        if(!this.hasArrived() && !t.hasArrived())
+            return 0;
+        if(!this.hasArrived())
+            return -1;
+        if(!t.hasArrived())
+            return 1;
         if(this.getPriority().compareTo(t.getPriority()) != 0) //if priority enum is not equal
             return this.getPriority().compareTo(t.getPriority());
         if(this.getSlack() < t.getSlack())
@@ -165,5 +174,6 @@ public class Task {
         return s.toString();
 
     }
+
 
 }
