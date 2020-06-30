@@ -1,6 +1,5 @@
 package com.gciolac;
 
-import java.util.Date;
 
 /**
  * @Author Gabriel Ciolac
@@ -124,12 +123,38 @@ public class Task {
     }
 
     /**
+     *
+     * @return priority
+     */
+    public Priority getPriority(){
+        return this.priority;
+    }
+
+    /**
+     * setter for priority
+     * @param p
+     */
+    public void setPriority(Priority p){
+        this.priority = p;
+    }
+
+    /**
      * @return time from arrivalTime to deadline
      */
     public long getTimeline(){
         if(deadline == null || arrivalTime == null)
             return 0;
         return Math.abs(deadline.get() - arrivalTime.get());
+    }
+
+    public int compareTo(Task t){
+        if(this.getPriority().compareTo(t.getPriority()) != 0) //if priority enum is not equal
+            return this.getPriority().compareTo(t.getPriority());
+        if(this.getSlack() < t.getSlack())
+            return 1;
+        else if(this.getSlack() > t.getSlack())
+            return -1;
+        return 0;
     }
 
     @Override

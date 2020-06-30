@@ -5,9 +5,20 @@ package com.gciolac;
  *
  */
 public enum Priority {
-    UNDEFINED,
-    LOW,
-    MEDIUM,
-    HIGH,
-    RESTRICTED
+    UNDEFINED(0),
+    LOW(1),
+    MEDIUM(2),
+    HIGH(3),
+    RESTRICTED(4);
+
+    private int level;
+
+    private Priority(int level){
+        this.level = level;
+    }
+
+    public int getLevel(){
+        return this.level;
+    }
+
 }
