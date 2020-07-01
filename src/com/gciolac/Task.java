@@ -154,23 +154,23 @@ public class Task{
         if(!this.hasArrived() && !t.hasArrived())
             return 0;
         if(!this.hasArrived())
-            return -1;
+            return 1;
         if(!t.hasArrived())
-            return 1;
-        if(this.getPriority().compareTo(t.getPriority()) != 0) //if priority enum is not equal
-            return this.getPriority().compareTo(t.getPriority());
-        if(this.getSlack() < t.getSlack())
-            return 1;
-        else if(this.getSlack() > t.getSlack())
             return -1;
+        if(this.getPriority().compareTo(t.getPriority()) != 0) //if priority enum is not equal
+            return -1 * this.getPriority().compareTo(t.getPriority());
+        if(this.getSlack() < t.getSlack())
+            return -1;
+        else if(this.getSlack() > t.getSlack())
+            return 1;
         return 0;
     }
 
     @Override
     public String toString(){
-        StringBuilder s = new StringBuilder(this.title +"\n\tArrival Time:"+ this.arrivalTime.toString() + "\n\tDeadline:"+ this.deadline);
+        StringBuilder s = new StringBuilder(this.title +"\n\tArrival Time:"+ this.arrivalTime.toString() + "\n\tDeadline:"+ this.deadline+"\n");
         if(this.hasArrived())
-            s.append("\n\tSlack Time:"+ getSlack()+"min\n");
+            s.append("\tSlack Time:"+ getSlack()+"min\n");
         return s.toString();
 
     }

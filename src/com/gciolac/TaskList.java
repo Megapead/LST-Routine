@@ -66,8 +66,43 @@ public class TaskList {
         return  tasks.remove(index);
     }
 
-    public void sort(){
-        this.getList().sort(Task::compareTo);
+    /**
+     * Swapping Two nodes,
+     * Note: Does not use local add method, uses add method from LinkedList
+     * @param indexY
+     * @param indexZ
+     */
+    private void swap(int indexY,int indexZ){
+        if(indexY == indexZ)
+            return;
+        Task tmp = this.get(indexY);
+        this.remove(indexY);
+        this.tasks.add(indexY,this.get(indexZ - 1));
+        this.remove(indexZ -1);
+        this.tasks.add(indexZ,tmp);
+
+    }
+
+    /**
+     * Quick sort algorithm for sorting list
+     * @param left
+     * @param right
+     */
+    public void sort(int left,int right){
+        if(right == -1)
+            right = this.tasks.size() - 1;
+        if(left < right){
+            Task pivot = this.get(right);
+            int pos = left -1;
+            for(int i = left; i < right; i++){
+                if(this.get(i).compareTo(pivot) <= 0)
+                    this.swap(++pos,i);
+            }
+            swap(pos + 1, right);
+            sort(left,pos);
+            sort(pos + 1,right);
+
+        }
     }
     private LinkedList<Task> getList(){
         return this.tasks;

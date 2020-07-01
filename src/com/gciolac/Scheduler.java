@@ -13,10 +13,16 @@ public class Scheduler {
     }
 
     private void update(){
-        this.schedule.sort();
+        this.schedule.sort(0,-1);
     }
 
-    public String print(){
+    public Task getCurrentTask(){
+        return schedule.peek();
+    }
+
+    
+
+    public String toString(){
         return this.schedule.toString();
     }
 

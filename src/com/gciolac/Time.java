@@ -62,6 +62,7 @@ public class Time {
         return this.current.getTime() / 60000;
     }
 
+
     @Override
     public String toString(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
