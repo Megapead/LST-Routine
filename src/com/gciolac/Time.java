@@ -1,5 +1,6 @@
 package com.gciolac;
 
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,6 +31,7 @@ public class Time {
         this.current = new Date();
     }
 
+
     /**
      * creates an object at specific time
      * @param year
@@ -46,6 +48,10 @@ public class Time {
         tmp.set(Calendar.HOUR_OF_DAY,hour);
         tmp.set(Calendar.MINUTE,minute);
         this.current = tmp.getTime();
+    }
+
+    public Time(long minutes){
+        this.current = new Date(minutes * 60000);
     }
 
     /**

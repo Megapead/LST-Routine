@@ -20,7 +20,6 @@ public class Scheduler {
         return schedule.peek();
     }
 
-    
 
     public String toString(){
         return this.schedule.toString();

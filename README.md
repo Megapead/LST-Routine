@@ -10,8 +10,8 @@ Least Slack Time scheduling is an algorithm which assigns the current task to be
 ## Goals of this application
 
  - [ ] Develop a Comand Line Version
-	 - [ ] Create Task
-	 - [ ] LST Controller
+	 - [x] Create Task
+	 - [x] LST Controller
 	 - [ ] Output schedule to a CSV or some standard calander filetype
 - [ ] Develop an Android Version ?!?!?!?! 
 
