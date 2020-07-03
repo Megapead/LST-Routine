@@ -20,7 +20,14 @@ public class Scheduler {
         return schedule.peek();
     }
 
+    public TaskList getSchedule(){
+        return this.schedule;
+    }
 
+    public void addTask(Task t){
+        schedule.add(t);
+        update();
+    }
     public String toString(){
         return this.schedule.toString();
     }

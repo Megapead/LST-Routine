@@ -26,11 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866f375b-428a-4571-bdea-2ba25afa163d" name="Default Changelist" comment="made compareTo for Tasks">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gciolac/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gciolac/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gciolac/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gciolac/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gciolac/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gciolac/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gciolac/Time.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.gciolac.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.gciolac.Controller" />
       <module name="LST-Routine" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -95,6 +95,7 @@
       <workItem from="1593532795006" duration="5582000" />
       <workItem from="1593567819805" duration="34000" />
       <workItem from="1593567868322" duration="2601000" />
+      <workItem from="1593817539020" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="made compareTo for Tasks">
       <created>1593534125702</created>
@@ -143,26 +144,26 @@
     </state>
     <state x="802" y="177" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593568474241" />
     <state x="802" y="206" width="374" height="637" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1593544506958" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1593570219253">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1350" height="257" key="GridCell.Tab.0.bottom" timestamp="1593820356981">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593570219253" />
-    <state width="1878" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593545084142" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1593570219253">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1350" height="257" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593820356981" />
+    <state width="1350" height="257" key="GridCell.Tab.0.center" timestamp="1593820356981">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593570219253" />
-    <state width="1878" height="258" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593545084141" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1593570219252">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1350" height="257" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593820356981" />
+    <state width="1350" height="257" key="GridCell.Tab.0.left" timestamp="1593820356980">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593570219252" />
-    <state width="1878" height="258" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593545084141" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1593570219253">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1350" height="257" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593820356980" />
+    <state width="1350" height="257" key="GridCell.Tab.0.right" timestamp="1593820356981">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593570219253" />
-    <state width="1878" height="258" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593545084142" />
+    <state width="1350" height="257" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593820356981" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1593570219253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,20 +184,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="760" y="471" width="400" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1593534209891" />
-    <state x="654" y="242" width="672" height="678" key="search.everywhere.popup" timestamp="1593205390067">
+    <state x="654" y="242" width="672" height="678" key="search.everywhere.popup" timestamp="1593820010997">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="654" y="242" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593205390067" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/gciolac/TaskList.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="654" y="242" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593820010997" />
   </component>
 </project>

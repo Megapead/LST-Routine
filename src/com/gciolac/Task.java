@@ -2,6 +2,7 @@ package com.gciolac;
 
 
 import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  * @Author Gabriel Ciolac
@@ -173,6 +174,40 @@ public class Task{
             s.append("\tSlack Time:"+ getSlack()+"min\n");
         return s.toString();
 
+    }
+
+    public static Task getTaskFromUser(){
+        Scanner in = new Scanner(System.in);
+        Time startTime, endTime;
+        String title;
+        Task tmp;
+
+        startTime = Time.now();
+
+        System.out.println("Does Task Have a Start Time? y/N");
+        if(in.next().equals("y"))
+            startTime = Time.getTimeFromUser();
+
+        System.out.println("Deadline: ");
+        endTime = Time.getTimeFromUser();
+
+        System.out.println("Title: ");
+        title = in.next();
+        tmp = new Task(title,startTime,endTime);
+
+        System.out.println("Priority: \n H)igh , M)edium, or L)ow");
+
+        String sel = in.next();
+        if(sel.equals("H"))
+            tmp.setPriority(Priority.HIGH);
+        else if(sel.equals("M"))
+            tmp.setPriority(Priority.MEDIUM);
+        else if(sel.equals("L"))
+            tmp.setPriority(Priority.LOW);
+        else
+            tmp.setPriority(Priority.UNDEFINED);
+
+        return tmp;
     }
 
 

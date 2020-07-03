@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * @Author Gabriel Ciolac
@@ -30,6 +31,7 @@ public class Time {
     private Time(){
         this.current = new Date();
     }
+
 
 
     /**
@@ -73,5 +75,23 @@ public class Time {
     public String toString(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         return dateFormat.format(this.current);
+    }
+
+    public static Time getTimeFromUser(){
+        int year, month, day, hour, minute;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Year:");
+        year = s.nextInt();
+        System.out.print("\nMonth:");
+        month = s.nextInt();
+        System.out.print("\nDay:");
+        day = s.nextInt();
+        System.out.print("\nHour:");
+        hour = s.nextInt();
+        System.out.print("\nMinute:");
+        minute = s.nextInt();
+
+        return new Time(year,month,day,hour,minute);
+
     }
 }
